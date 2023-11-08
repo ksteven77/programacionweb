@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #tasks {
+            list-style-type: none;
+            padding: 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  <center><h1>Ejercicio 06</h1>
+  <h2>LISTA DE TAREAS</h2>
+    <input type="text" id="newTask" placeholder="Escriba una Tarea">
+    <button onclick="agregarTarea()">Agregar tarea</button>
+    
+    <ul id="tasks">
+    </ul>
+    </center>
+    <script>
+        function agregarTarea() {
+            var tarea = document.getElementById('newTask').value;
+            if (tarea === "") {
+                alert("Por favor, ingrese una tarea.");
+            } else {
+                var lista = document.getElementById('tasks');
+                var elemento = document.createElement('li');
+                elemento.appendChild(document.createTextNode(tarea));
+                var boton = document.createElement('button');
+                boton.appendChild(document.createTextNode('Eliminar'));
+                boton.onclick = function() {
+                    lista.removeChild(elemento);
+                };
+                elemento.appendChild(boton);
+                lista.appendChild(elemento);
+                document.getElementById('newTask').value = "";
+            }
+        }
+    </script>
+</body>
+</html>

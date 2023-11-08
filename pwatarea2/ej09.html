@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #countdown {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+  <center><h1>Ejercicio 09</h1>
+  <h2>TEMPORIZADOR</h2>
+  <p>TIEMPO RESTANTE PARA <b>FIN DE AÑO DEL 2023(31 DIC)</b></p></center>
+    <div id="countdown"></div>
+
+    <script>
+        var fechaObjetivo = new Date("Dec 31, 2023 00:00:00").getTime();
+
+        var x = setInterval(function() {
+
+            var now = new Date().getTime();
+
+            var distancia = fechaObjetivo - now;
+
+            var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = dias + "d " + horas + "h "
+            + minutos + "m " + segundos + "s ";
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRADO";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

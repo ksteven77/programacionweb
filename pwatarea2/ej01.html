@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #cambiarColor {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <center>
+    <h1>Ejercicio 01</h1>
+    <h2>BOTÓN PARA CAMBIAR COLOR DE FONDO</h2>
+    <div id="cambiarColor">Haz clic en el botón para cambiar el color</div>
+    <button onclick="cambiarColorFondo()">Cambiar color de fondo</button>
+    </center>
+    <script>
+        function cambiarColorFondo() {
+            var elemento = document.getElementById("cambiarColor");
+            var colores = ["#FF5733", "#33FF57", "#5733FF", "#F033FF", "#33F7FF"];
+            var colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            elemento.style.backgroundColor = colorAleatorio;
+        }
+    </script>
+</body>
+</html>

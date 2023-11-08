@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        li a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+        }
+        ul ul {
+            display: none;
+            position: absolute;
+            left: 200px;
+            top: 0;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+  <center><h1>Ejercicio 07</h1>
+  <h2>MENÚ DESPLEGABLE</h2>
+    <ul id="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Servicios</a>
+            <ul>
+                <li><a href="#">Servicio 1</a></li>
+                <li><a href="#">Servicio 2</a></li>
+                <li><a href="#">Servicio 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Ciudades</a>
+            <ul>
+                <li><a href="#">Ciudad 1</a></li>
+                <li><a href="#">Ciudad 2</a></li>
+                <li><a href="#">Ciudad 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contáctenos</a></li>
+    </ul>
+    </center>
+    <script>
+        var elementosConSubmenu = document.querySelectorAll('li');
+        for (var i = 0; i < elementosConSubmenu.length; i++) {
+            elementosConSubmenu[i].addEventListener('click', function() {
+                var lista = this.querySelector('ul');
+                if (lista.style.display === 'none' || lista.style.display === '') {
+                    lista.style.display = 'block';
+                } else {
+                    lista.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

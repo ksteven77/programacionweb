@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body><center>
+    <h1>Ejercicio 02</h1>
+    <h2>CALCULADORA SENCILLA</h2>
+    <input type="text" id="resultado" disabled><br><br>
+    <input type="button" value="1" onclick="agregarNumero('1')">
+    <input type="button" value="2" onclick="agregarNumero('2')">
+    <input type="button" value="3" onclick="agregarNumero('3')">
+    <input type="button" value="+" onclick="agregarOperador('+')"><br>
+    <input type="button" value="4" onclick="agregarNumero('4')">
+    <input type="button" value="5" onclick="agregarNumero('5')">
+    <input type="button" value="6" onclick="agregarNumero('6')">
+    <input type="button" value="-" onclick="agregarOperador('-')"><br>
+    <input type="button" value="7" onclick="agregarNumero('7')">
+    <input type="button" value="8" onclick="agregarNumero('8')">
+    <input type="button" value="9" onclick="agregarNumero('9')">
+    <input type="button" value="*" onclick="agregarOperador('*')"><br>
+    <input type="button" value="0" onclick="agregarNumero('0')">
+    <input type="button" value="/" onclick="agregarOperador('/')">
+    <input type="button" value="C" onclick="limpiar()"><br>
+    <input type="button" value="=" onclick="calcular()">
+    </center>
+    <script>
+        let input = document.getElementById('resultado');
+
+        function agregarNumero(num) {
+            input.value += num;
+        }
+
+        function agregarOperador(operador) {
+            input.value += operador;
+        }
+
+        function calcular() {
+            try {
+                input.value = eval(input.value);
+            } catch (error) {
+                input.value = 'Error';
+            }
+        }
+
+        function limpiar() {
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

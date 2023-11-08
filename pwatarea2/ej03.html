@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+        }
+        #image {
+            transition: transform 0.5s;
+        }
+        #image:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Ejercicio 03</h1>
+    <h2>TRANSICIÓN DE FOTO AL PASAR EL MOUSE</h2></center>
+    <div id="container">
+        <img id="image" src="images/niño1.jpg" alt="Imagen 1" onmouseover="cambiarImagen()" onmouseout="restaurarImagen()">
+    </div>
+
+    <script>
+        function cambiarImagen() {
+            document.getElementById('image').src = 'images/niño2.jpg';
+        }
+
+        function restaurarImagen() {
+            document.getElementById('image').src = 'images/niño1.jpg';
+        }
+    </script>
+</body>
+</html>
